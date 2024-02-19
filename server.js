@@ -7,8 +7,6 @@ const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 
-// TODO: Add a comment describing the functionality of this expression
-//this is allowing us to use the sessions to plug into the handlebars 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
@@ -16,8 +14,6 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
-// TODO: Add a comment describing the functionality of this object
-// this is the sessions for the express.js and middleware
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
@@ -28,8 +24,6 @@ const sess = {
   })
 };
 
-// TODO: Add a comment describing the functionality of this statement
-//use the session in express.js it turns it on
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
